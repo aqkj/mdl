@@ -42,7 +42,7 @@ linux:
 appImage:
   artifactName: ${name}-${version}.${ext}
 portable:
-  artifactName: ${name}-${version}.${ext}
+  artifactName: ${name}.${ext}
 npmRebuild: false
 publish:
   provider: generic

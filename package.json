@@ -1,0 +1,17 @@
+{
+  "name": "mango-launcher",
+  "version": "1.0.0",
+  "description": "mango-launcher",
+  "main": "./out/main/index.js",
+  "author": "mango",
+  "homepage": "https://mango.9myi.com",
+  "scripts": {
+    "build": "electron-builder --win"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  }
+}

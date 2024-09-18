@@ -1,0 +1,44 @@
+name: Builder Main CI (WIN)
+permissions:
+  contents: write
+  id-token: write
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REF: ${{ github.ref }}
+    steps:
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
+    - name: Installing Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: yarn
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      shell: bash
+      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+    - uses: actions/cache@v4
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        # enableCrossOsArchive: true
+        # fail-on-cache-miss: true
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: Prepare for Windows Build
+      shell: powershell #The default shell for Windows
+      run: |
+        yarn install --network-timeout 100000 --retry 5 --network-concurrency 1 --verbose
+    - name: Build for Windows
+      shell: powershell #The default shell for Windows
+      run: |
+        yarn run build

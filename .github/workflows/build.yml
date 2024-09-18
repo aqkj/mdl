@@ -42,20 +42,20 @@ jobs:
       shell: powershell #The default shell for Windows
       run: |
         yarn run build
-    # - name: Get current tag
-    #   id: get_tag
-    #   shell: bash
-    #   run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-    # - name: Upload Release
-    #   uses: softprops/action-gh-release@v2
-    #   with:
-    #     tag_name: ${{ env.TAG }}
-    #     name: Release ${{ env.TAG }}
-    #     body: "More new features are now supported."
-    #     prerelease: true
-    #     token: ${{ secrets.GITHUB_TOKEN }}
-    #     files: |
-    #       dist/mango-launcher.exe
+    - name: Get current tag
+      id: get_tag
+      shell: bash
+      run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+    - name: Upload Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ env.TAG }}
+        name: Release ${{ env.TAG }}
+        body: "More new features are now supported."
+        prerelease: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        files: |
+          dist/mango-launcher.exe
     # - name: Get current tag
     #   id: get_tag
     #   shell: bash

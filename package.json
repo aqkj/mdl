@@ -4,7 +4,7 @@
   "description": "mango-launcher",
   "main": "./out/main/index.js",
   "author": "mango",
-  "homepage": "https://mango.9myi.com/",
+  "homepage": "https://mango.9myi.com",
   "scripts": {
     "build": "electron-builder --win"
   },

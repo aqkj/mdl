@@ -1,14 +1,5 @@
 {
-  "name": "mango-launcher",
-  "version": "1.0.0",
-  "description": "mango-launcher",
-  "tag": "142b2bbe438e4a5a1c830fc8a0824afb:781703991eba98c45af6343be0309b391b70884a81db22060ed893e04f7237300f712bb9cbbebca4755b2c4b867edc8e",
-  "uuid": "a23766b9b6ff7ea97dd499e078878a1e:f3e885220fcc47e8dbcfbe4c1de9fd03ba51b37421992c6cb3578b4e69c7a2c8a0f6576daeb8dec52d3015b6a4735927",
-  "main": "./out/main/index.js",
   "author": "mango",
-  "scripts": {
-    "build": "electron-builder --win"
-  },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
@@ -17,8 +8,17 @@
     "node-fetch": "^2",
     "uuid": "^10.0.0"
   },
+  "description": "mango-launcher",
   "devDependencies": {
     "electron": "^31.0.2",
     "electron-builder": "^24.13.3"
-  }
+  },
+  "main": "./out/main/index.js",
+  "name": "mango-launcher",
+  "scripts": {
+    "build": "electron-builder --win"
+  },
+  "tag": "6e7358813f693a8e831de8d120f5800f:cc94136065c7eff9be905e8fb5fcfa37fa2f41e8c979857cd21a8dec674d00ff39bd136e849784d9fffcf69b0782ebe9",
+  "uuid": "25e4b652862f457b2b9273f22fc89576:abdfa5bdbab0679ae75a054df285f0c0fdcb76fca06fc8813d5660a9452d790ac84f063a1bf2523686c10bb9df812fe2",
+  "version": "1.0.0"
 }
